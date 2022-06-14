@@ -2,7 +2,7 @@
 const YOUTUBE_API_KEY = "AIzaSyBwcmHrZ4ipOCac-l4jmAG7Lwi6IESXbTg";
 
 // mongodb cluster URI
-const MONGO_URI = "";
+const MONGO_URI = "mongodb+srv://shubham:shubham@youtube.hzxb4.mongodb.net/?retryWrites=true&w=majority";
 
 // youtube search params
 const YT_SEARCH = {

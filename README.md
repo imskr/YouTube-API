@@ -24,6 +24,10 @@
 
 ## Architecture
 
+A simple architechture of application
+
+![arch](./public/images/arch.png)
+
 ## API
 > `GET Request: /` - Fetch videos from database
 
@@ -40,7 +44,5 @@
         "updatedAt": "2022-06-15T13:43:35.522Z",
         "__v": 0
     },
-    .
-    .
   ]
   ```

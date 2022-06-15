@@ -4,8 +4,8 @@ const YOUTUBE_API_KEY = "AIzaSyBwcmHrZ4ipOCac-l4jmAG7Lwi6IESXbTg";
 // mongodb cluster URI
 const MONGO_URI = "mongodb+srv://shubham:shubham@youtube.hzxb4.mongodb.net/?retryWrites=true&w=majority";
 
-// server port
-const PORT = 8080
+// base url for search api
+const YOUTUBE_URL = 'https://www.googleapis.com/youtube/v3/search';
 
 // youtube search params
 const YT_SEARCH = {
@@ -21,4 +21,5 @@ module.exports = {
     YOUTUBE_API_KEY,
     MONGO_URI,
     YT_SEARCH,
+    YOUTUBE_URL
 };

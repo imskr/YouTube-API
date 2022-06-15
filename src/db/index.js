@@ -2,25 +2,18 @@ const mongoose = require('mongoose');
 // importing mongo uri from config
 const { MONGO_URI } = require('../../config');
 
-// create mongo connection and connect with cluster
-mongoose
-    .connect(MONGO_URI, {
+// define database connection using mongoose
+const dbConnection = async () => {
+    try {
+      await mongoose.connect(MONGO_URI, {
+        useNewUrlParser: true,
         useUnifiedTopology: true,
-        useNewUrlParser: true
-    })
-    .then(() => console.log('YouTube Database Connected'))
-    .catch(err => console.log('YouTube Database Connection Err=>', err));
-
-const dbConnection = mongoose.connection
-
-// bind connection error
-dbConnection.on('error', console.error.bind(console, 'connection error: '))
-
-// check for connection
-dbConnection.once('open', function () {
-    console.log('Connected successfully')
-});
-
-module.exports = {
-    dbConnection,
-}
+      });
+      console.log('DB connected');
+    } catch (error) {
+      console.error(error);
+      process.exit(1);
+    }
+  };
+  
+module.exports = dbConnection;

@@ -4,7 +4,7 @@ const { Schema, default: mongoose } = require('mongoose');
 /*define our youtube schema and enabling timestamp to get createdAt and updatedAt
     more info on search result struct: https://developers.google.com/youtube/v3/docs/search/list
 
-    Defining: videoId, channelId, title, description, publishTime, channelTitle, thumbnails
+    Defining: videoId, title, description, publishTime, thumbnails
 */
 const ytSchema = new Schema(
     {
@@ -18,38 +18,12 @@ const ytSchema = new Schema(
         },
         description: {
             type: String,
-            required: true,
         },
         publishTime: {
             type: String,
-            required: true,
-        },
-        channel: {
-            channelId: {
-                type: String,
-                required: true
-            },
-            channelTitle: {
-                type: String,
-                required: true
-            }
         },
         thumbnails: {
-            default: {
-                url: String,
-                width: Number,
-                height: Number,
-            },
-            medium: {
-                url: String,
-                width: Number,
-                height: Number,
-            },
-            high: {
-                url: String,
-                width: Number,
-                height: Number,
-            }
+            type: String,
         }
     },
     { timestamps: true }

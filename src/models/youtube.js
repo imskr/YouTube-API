@@ -12,10 +12,6 @@ const ytSchema = new Schema(
             type: String,
             required: true,
         },
-        channelId: {
-            type: String,
-            required: true,
-        },
         title: {
             type: String,
             required: true,
@@ -28,9 +24,15 @@ const ytSchema = new Schema(
             type: String,
             required: true,
         },
-        channelTitle: {
-            type: String,
-            required: true,
+        channel: {
+            channelId: {
+                type: String,
+                required: true
+            },
+            channelTitle: {
+                type: String,
+                required: true
+            }
         },
         thumbnails: {
             default: {
@@ -56,4 +58,4 @@ const ytSchema = new Schema(
 // using mongoose index to set index on our youtube db 
 ytSchema.index({ publishTime: -1 })
 
-export default mongoose.model("Youtube", ytSchema);
+module.exports = Youtube = mongoose.model("Youtube", ytSchema);
